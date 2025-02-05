@@ -71,7 +71,7 @@ result = re.findall("...",str) # 3 karakterli kelimeleri bulur
 """
 result = re.findall("^P",str) # P ile başlayan kelimeleri bulur
 result = re.findall("t$",str) # t ile biten kelimeleri bulur
-
+##########################################################
 """
         * - Bir karakterin sıfır ya da daha fazla sayıda geçtiği durumları seçer.
 
@@ -82,7 +82,7 @@ result = re.findall("t$",str) # t ile biten kelimeleri bulur
 
 """
 result = re.findall("sa*t",str) # a harfi 0 ya da daha fazla olabilir
-
+##########################################################
 """
         + - Bir karakterin bir ya da daha fazla sayıda geçtiği durumları seçer
             ma+n => mn : No match
@@ -91,13 +91,13 @@ result = re.findall("sa*t",str) # a harfi 0 ya da daha fazla olabilir
                     main : No match (a karakterinden sonra i karakteri geldiği için)n gelmiyor
 """
 result = re.findall("sa+t",str) # a harfi 1 ya da daha fazla olabilir
-
+##########################################################
 """
         ? - Bir karakterin sıfır ya da bir kez geçtiği durumları seçer
             
 """
 result = re.findall("sa?t",str) # a harfi 0 ya da 1 kez geçebilir
-
+##########################################################
 """
     {}-karakter sayısını kontorl eder
         al{2} => al : No match
