@@ -3,7 +3,7 @@ import requests
 class GitHub:
     def __init__(self):
         self.api_url = "https://api.github.com"
-        self.token = "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" # bireysel erişim tokeninizi buraya girin
+        self.token = "bireysel erişim tokeninizi buraya girin" 
 
         self.headers = {
             "Accept": "application/vnd.github.v3+json",
