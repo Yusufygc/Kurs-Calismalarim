@@ -41,7 +41,7 @@ cinsiyet =df.iloc[:,-1].values
 cinsiyetDf =pd.DataFrame(cinsiyet, index=range(22), columns=['cinsiyet'])
 
 birlestirilmisTamDf = pd.concat([birlestirilmisDf,cinsiyetDf], axis=1)
-print(birlestirilmisTamDf)
+#print(birlestirilmisTamDf)
 
 #---------------------------------------------------------------------------------#
 #---------------------------------------------------------------------------------#
@@ -52,14 +52,17 @@ from sklearn.model_selection  import train_test_split
 
 x_train,x_test, y_train, y_test = train_test_split(birlestirilmisDf,cinsiyetDf,test_size=0.33,random_state=0)
 
+#---------------------------------------------------------------------------------#
+#---------------------------------------------------------------------------------#
 
+# OZNITELIK OLCEKLEME
 
+from sklearn.preprocessing import StandardScaler
 
+sc =StandardScaler()
 
-
-
-
-
+X_train =sc.fit_transform(x_train)
+X_test =sc.fit_transform(x_test)
 
 
 
