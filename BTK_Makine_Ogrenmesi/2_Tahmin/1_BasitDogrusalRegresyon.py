@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt 
 
 veri = pd.read_csv("satislar.csv")
 
@@ -50,10 +52,20 @@ tahmin = lr.predict(X_test) # olceklenmis veri uzerinden tahmin yaptik ama veriy
 lr.fit(x_train,y_train)# x trainden y traini tahmin edecek
 olceklenmemisTahmin =lr.predict(x_test)
 
+#---------------------------------------------------#
+# VERI GORSELLESTIRME ISLEMI                        #
+#---------------------------------------------------#
 
+#plt.plot(x_train,y_train) # veriler siralanmadigi icin kotu bir sekil olustu 
 
+# index e gore siralama islemi yapiyoruz
+x_train = x_train.sort_index() 
+y_train = y_train.sort_index()
 
+plt.plot(x_train,y_train) # siralanmis veriler
+plt.plot(x_test,lr.predict(x_test))
 
-
-
+plt.title("Aylara gore satislar")
+plt.xlabel("Aylar")
+plt.ylabel("Satislar")
 
