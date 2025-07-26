@@ -1,7 +1,5 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.impute import SimpleImputer
 from sklearn import preprocessing
 
 data = pd.read_csv("veriler.csv")
@@ -51,7 +49,7 @@ birlestirilmisDf = pd.concat([sonuc,yenidf], axis=1)
 cinsiyetDf =pd.DataFrame(cinsiyet[:,:1], index=range(22), columns=['cinsiyet'])
 
 birlestirilmisTamDf = pd.concat([birlestirilmisDf,cinsiyetDf], axis=1)
-print(birlestirilmisTamDf)
+
 
 #---------------------------------------------------------------------------------#
 #---------------------------------------------------------------------------------#
@@ -65,14 +63,42 @@ x_train,x_test, y_train, y_test = train_test_split(birlestirilmisDf,cinsiyetDf,t
 #---------------------------------------------------------------------------------#
 #---------------------------------------------------------------------------------#
 
-# OZNITELIK OLCEKLEME
+# REGRESYON MODELININ OLUSTURULMASI
+from sklearn.linear_model import LinearRegression
 
-from sklearn.preprocessing import StandardScaler
+regressor = LinearRegression()
+regressor.fit(x_train, y_train)
 
-sc =StandardScaler()
+y_predict =regressor.predict(x_test)
 
-X_train =sc.fit_transform(x_train)
-X_test =sc.fit_transform(x_test)
+
+#---------------------------------------------------------------------------------#
+#---------------------------------------------------------------------------------#
+# BOY TAHMINI YAPMAK ICIN VERI MANUPILASYONU YAPIYORUZ
+
+boy = birlestirilmisTamDf.iloc[:,3:4].values
+print(boy)
+
+sol = birlestirilmisTamDf.iloc[:,:3]
+sag = birlestirilmisTamDf.iloc[:,4:]
+
+veri =pd.concat([sol,sag],axis=1)
+print(veri)
+#---------------------------------------------------------------------------------#
+#---------------------------------------------------------------------------------#
+# Boy icin verileri tekrar bolduk \ yeni bir egitim ve tahmin islemi yapiyoruz
+
+x_train,x_test, y_train, y_test = train_test_split(veri,boy,test_size=0.33,random_state=0)
+
+regressor2 = LinearRegression()
+regressor2.fit(x_train, y_train)
+
+y_predict2 =regressor2.predict(x_test)
+
+
+
+
+
 
 
 
