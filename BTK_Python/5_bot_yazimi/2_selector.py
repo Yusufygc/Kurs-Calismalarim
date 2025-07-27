@@ -6,6 +6,33 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 import time
+"""
+📌 Selenium Modül Açıklamaları
+
+from selenium.webdriver.common.by import By
+→ HTML öğelerini bulmak için kullanılır.
+→ Örneğin: By.ID, By.CSS_SELECTOR, By.NAME gibi seçimler yapılabilir.
+
+from selenium.webdriver.common.keys import Keys
+→ Klavye tuşlarını simüle eder.
+→ Örneğin: Keys.ENTER, Keys.TAB, Keys.ARROW_DOWN gibi tuşlara sanal olarak basılabilir.
+
+from selenium.webdriver.chrome.options import Options
+→ Chrome tarayıcı için ayarlar yapılır.
+→ Örneğin: headless (görünmez mod), pencere boyutu, user-agent gibi seçenekler eklenebilir.
+
+from selenium.webdriver.support.ui import WebDriverWait
+→ Bir HTML öğesinin sayfada yüklenmesini veya belirli bir koşulu beklemek için kullanılır.
+
+from selenium.webdriver.support import expected_conditions as EC
+→ Beklenen koşullar tanımlanır.
+→ Örneğin: öğenin tıklanabilir olması, görünür olması gibi durumları kontrol eder.
+
+from selenium.webdriver.chrome.service import Service
+→ ChromeDriver'ı çalıştırmak için kullanılır.
+→ ChromeDriver yolunu tanımlamak veya log bastırmayı kontrol etmek için tercih edilir.
+
+"""
 
 options = Options()
 options.add_argument("--dns-prefetch-disable")
