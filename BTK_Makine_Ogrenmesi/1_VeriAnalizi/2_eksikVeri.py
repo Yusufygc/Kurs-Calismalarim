@@ -21,8 +21,8 @@ imputer = SimpleImputer(missing_values=np.nan,strategy='mean') # nan olan degere
 Yas = df.iloc[:,1:4].values
 print(Yas)# yas boy kilo verisi beraber geldi
 
-imputer = imputer.fit(Yas[:,1:4]) # burda ortalama veriyi ogrendi imputer eksik verilerin yerine koyulacak degeri
-Yas[:,1:4] = imputer.transform(Yas[:,1:4]) # yas taki nan degerler degisecek
+imputer = imputer.fit(Yas[:,1:4]) # Bu sütunlardaki NaN değerler için, her sütunun kendi ortalaması hesaplanıyor.
+Yas[:,1:4] = imputer.transform(Yas[:,1:4]) # fit ile öğrenilen ortalamalar kullanılarak, her sütundaki NaN değer kendi sütunun ortalaması ile dolduruluyor.
 
 print(Yas)
 
