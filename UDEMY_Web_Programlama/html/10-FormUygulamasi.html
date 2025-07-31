@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form App/üye ol</title>
+  </head>
+  <body>
+    <h1>Lütfen Formu Eksiksiz Doldurunuz</h1>
+    <hr />
+
+    <h2>Hesap Bilgileriniz</h2>
+    <table cellspacing="10">
+      <tr>
+        <td>Kullanıcı Adı:</td>
+        <td>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Kullanıcı adı giriniz"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Eposta:</td>
+        <td>
+          <input
+            type="eposta"
+            name="eposta"
+            id="eposta"
+            placeholder="Eposta giriniz"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Şifre :</td>
+        <td>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="parola giriniz"
+          />
+        </td>
+      </tr>
+    </table>
+    <h2>Kişisel Bilgileriniz</h2>
+    <table cellspacing="10">
+      <tr>
+        <td>Adınız:</td>
+        <td>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Adınızı giriniz"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Soyadınız:</td>
+        <td>
+          <input
+            type="text"
+            name="surname"
+            id="surname"
+            placeholder="Soyadınızı giriniz"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td>Cinsiyetiniz:</td>
+        <td><input type="radio" name="cinsiyet" />Erkek</td>
+        <td><input type="radio" name="cinsiyet" />Kadın</td>
+      </tr>
+
+      <tr>
+        <td>Hobileriniz :</td>
+        <td>
+          <input type="checkbox" id="sinema" name="sinema" />
+          <label for="sinema">Sinema</label>
+        </td>
+        <td>
+          <input type="checkbox" id="kitap" name="kitap" />
+          <label for="kitap">Kitap</label>
+        </td>
+        <td>
+          <input type="checkbox" id="müzik" name="müzik" />
+          <label for="müzik">Müzik</label>
+        </td>
+        <td>
+          <input type="checkbox" id="spor" name="spor" />
+          <label for="spor">Spor</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Şehir :</td>
+        <td>
+          <select name="cities" id="cities">
+            <option value="34">İstanbul</option>
+            <option value="6">Ankara</option>
+            <option value="35">İzmir</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+
+        <td>
+          <button type="submit">Kaydet</button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

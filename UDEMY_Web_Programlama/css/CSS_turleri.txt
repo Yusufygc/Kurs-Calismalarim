@@ -1,0 +1,5 @@
+INLINE css --> Direkt etiketler (inline) içerisinde yazılan CSS kodlarıdır. Bu tür CSS kodları sadece yazıldığı etiket içerisinde geçerlidir.
+
+INTERNAL css --> Sayfa içerisinde <style> etiketi içerisinde yazılan CSS kodlarıdır. Bu tür CSS kodları sayfa içerisinde geçerlidir. <head> etiketi içerisinde yer alır. Ve bütün css kodları bu etiket içerisinde yazılır.
+
+EXTERNAL css --> Sayfa içerisinde <link> etiketi ile çağırılan dış bir dosyadaki CSS kodlarıdır. Bu tür CSS kodları sayfa içerisinde geçerlidir. Başka bir dosyada yazılır ve sayfaya çağırılır.sdf

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <!--  <form action="10-Formlar.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" />
+      <br />
+HTML formları, kullanıcı girişini toplamak için kullanılır. `<form>` etiketi, bir HTML formu oluşturmak için kullanılır.
+
+`<form>` etiketindeki `action` özniteliği, form verilerinin form gönderildiğinde nereye gönderileceğini belirten URL'yi belirtir. Bu durumda, veriler "10-Formlar.php" adresine gönderilir. `method` özniteliği, form verilerini gönderirken kullanılacak HTTP yöntemini belirtir. Burada `post` yöntemi kullanılmıştır ve bu yöntem, form verilerini HTTP post işlemi olarak gönderir.
+
+Formun içinde, üç set `<label>` ve `<input>` etiketleri bulunur. `<label>` etiketi, çeşitli öğeler için bir etiket tanımlar. `<label>` etiketindeki `for` özniteliği, bir etiketin hangi form öğesine bağlı olduğunu belirtir. `<input>` etiketi, kullanıcıdan veri almak için web tabanlı formlar için etkileşimli kontroller oluşturmak için kullanılır. `<input>` etiketindeki `type` özniteliği, hangi tür giriş öğesinin görüntüleneceğini belirtir. `name` özniteliği, `<input>` öğesi için bir isim belirtir. `id` özniteliği ise öğe için benzersiz bir tanımlayıcıdır.
+
+`<br />` etiketi, form öğeleri arasında bir satır aralığı eklemek için kullanılan bir satır kırıcıdır.
+
+Son satır eksik görünüyor ve bir hata oluşturabilir. `<` ile başlar ancak hangi öğeyi belirttiği belirtilmemiştir. -->
+
+    <form action="register.php">
+      <div>
+        <label for="name">Ad :</label>
+        <!-- <input type="text" name="name" id="name" /> inputa id verdik ve labelda id ile eşleştirdik-->
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <label for="surname">Soyadınız :</label>
+        <input type="text" id="surname" />
+      </div>
+      <!--#############################################-->
+      <div>
+        <p>Sevdiğin programlama dili</p>
+        <input type="radio" id="html" name="programlama" />
+        <label for="html">HTML</label>
+
+        <input type="radio" id="css" name="programlama" />
+        <label for="css">CSS</label>
+
+        <input type="radio" id="js" name="programlama" />
+        <label for="js">JS</label>
+        <!--name="programlama" bununla aynı grupta olduklarını belirttik ve tek seçim hakkımız oldu-->
+      </div>
+      <!--#############################################-->
+      <div>
+        <p>Sevdiğin renk</p>
+        <input type="checkbox" id="red" name="renk" />
+        <label for="red">Kırmızı</label>
+
+        <input type="checkbox" id="blue" name="renk" />
+        <label for="blue">Mavi</label>
+
+        <input type="checkbox" id="green" name="renk" />
+        <label for="green">Yeşil</label>
+        <!--checkbox ile birden fazla seçim yapabiliyoruz
+        SAYFA İÇERİNDE AYNI ID OLMAMASINA DİKKAT EDİYORUZ-->
+      </div>
+      <!--#############################################-->
+      <br />
+
+      <div>
+        <label for="intro">Kendini Anlat</label>
+        <textarea id="intro" name="intro"></textarea>
+      </div>
+      <br />
+      <!--#############################################-->
+      <div>
+        <label for="cities">Şehir</label>
+        <select id="cities" name="cities">
+          <option value="34">İstanbul</option>
+          <option value="6">Ankara</option>
+          <option value="35">İzmir</option>
+          <!--option ile seçenekler oluşturduk ve value ile değerlerini belirledik kullanıcı şehir seçti ama biz sayıları elde ettik arka planda-->
+        </select>
+      </div>
+
+      <br />
+
+      <div>
+        <label for="eposta">email</label>
+        <input type="email" id="eposta" name="eposta" />
+      </div>
+
+      <button type="submit">Kaydet</button>
+      <button type="reset">Temizle</button>
+    </form>
+  </body>
+</html>
