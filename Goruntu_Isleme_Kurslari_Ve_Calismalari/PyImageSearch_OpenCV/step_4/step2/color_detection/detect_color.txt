@@ -1,0 +1,32 @@
+"""
+# Colors can look very different under varying illumination, and when that happens, your hard-coded lower and upper RGB ranges will fail.
+# Renkler, değişen aydınlatma altında çok farklı görünebilir ve bu olduğunda, sabit kodlanmış alt ve üst RGB aralıklarınız başarısız olur.
+
+# One potential solution is to use a different color space which does a better job of mimicking how humans perceive color — the HSV and L*a*b* color spaces are good choices here.
+# Olası bir çözüm, insanların rengi nasıl algıladıklarını daha iyi taklit eden farklı bir renk uzayı kullanmaktır — HSV ve L*a*b* renk uzayları burada iyi seçimlerdir.
+
+
+An even better alternative would be to use a color correction card. You place a card (like that in Figure 5 above) in the scene containing the objects we’re capturing, and then you post-process all these images by:
+
+Detecting the color correction card
+Determining the color block region
+Performing histogram matching to transfer the color space from one image to another
+In that manner you can help ensure a consistent color across all images, even though they may have been captured under different lighting conditions.
+
+Daha da iyi bir alternatif, bir renk düzeltme kartı kullanmak olacaktır. Yakaladığımız nesneleri içeren sahneye bir kart (yukarıdaki Şekil 5'teki gibi) yerleştirirsiniz ve ardından aşağıdakileri yaparak tüm bu görüntüleri sonradan işlersiniz:
+
+Renk düzeltme kartını algılama
+Renk bloğu bölgesinin belirlenmesi
+Renk uzayını bir görüntüden diğerine aktarmak için histogram eşleştirme gerçekleştirme
+Bu şekilde, farklı aydınlatma koşullarında çekilmiş olsalar bile tüm görüntülerde tutarlı bir renk sağlamaya yardımcı olabilirsiniz.
+"""
+"""
+To detect colors in images, the first thing you need to do is define the upper and lower limits for your pixel values.
+Görüntülerdeki renkleri algılamak için yapmanız gereken ilk şey, piksel değerleriniz için üst ve alt sınırları belirlemektir.
+
+Once you have defined your upper and lower limits, you then make a call to the cv2.inRange method which returns a mask, specifying which pixels fall into your specified upper and lower range.
+Üst ve alt sınırlarınızı tanımladıktan sonra, cv2.inRange yöntemini çağırarak bir maske döndürür ve belirtilen üst ve alt aralığa hangi piksellerin düştüğünü belirtirsiniz.
+
+Finally, now that you have the mask, you can apply it to your image using the cv2.bitwise_and function.
+Son olarak, artık maskeye sahip olduğunuza göre, bunu cv2.bitwise_and işlevini kullanarak görüntünüze uygulayabilirsiniz.
+"""

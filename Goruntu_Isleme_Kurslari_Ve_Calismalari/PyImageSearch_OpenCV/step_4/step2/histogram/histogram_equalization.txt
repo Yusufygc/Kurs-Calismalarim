@@ -1,0 +1,33 @@
+Histogram equalization is a basic image processing technique that adjusts the global contrast of an image by updating the image histogram’s pixel intensity distribution. Doing so enables areas of low contrast to obtain higher contrast in the output image.
+
+Essentially, histogram equalization works by:
+
+Computing a histogram of image pixel intensities
+Evenly spreading out and distributing the most frequent pixel values (i.e., the ones with the largest counts in the histogram)
+Giving a linear trend to the cumulative distribution function (CDF)
+The result of applying histogram equalization is an image with higher global contrast.
+
+We can further improve histogram equalization by applying an algorithm called Contrast Limited Adaptive Histogram Equalization (CLAHE), resulting in higher quality output images.
+
+Other than photographers using histogram equalization to correct under/over-exposed images, the most widely used histogram equalization application can be found in the medical field.
+
+You’ll typically see histogram equalization applied to X-ray scans and CT scans to improve the radiograph’s contrast. Doing so helps doctors and radiologists better interpret the scans and make an accurate diagnosis.
+
+By the end of this tutorial, you will be able to successfully apply both basic histogram equalization and adaptive histogram equalization to images with OpenCV.
+
+Histogram eşitleme, bir resmin genel kontrastını düzenlemek için resim histogramının piksel yoğunluk dağılımını güncelleyen temel bir görüntü işleme tekniğidir. Bunu yaparak, düşük kontrastlı bölgelerin çıktı resminde daha yüksek kontrast elde etmesi sağlanır.
+
+Esasen, histogram eşitleme şu şekilde çalışır:
+
+- Resim piksel yoğunluklarının histogramını hesaplamak.
+- Histogramdaki en sık piksel değerlerini (yani histogramda en büyük sayıda olanları) düzenli bir şekilde dağıtmak ve yaymak.
+- Kumulatif dağılım fonksiyonuna (CDF) lineer bir eğri vermek.
+- Histogram eşitleme uygulamasının sonucu, daha yüksek bir genel kontrasta sahip bir resimdir.
+
+Bu yöntemi daha da iyileştirmek için "Contrast Limited Adaptive Histogram Equalization" (CLAHE) adlı bir algoritma uygulanabilir, bu da daha yüksek kaliteli çıktı resimlerine yol açar.
+
+Histogram eşitlemenin fotoğrafçılar tarafından aşırı/az pozlanmış resimleri düzeltmek için kullanılmasının yanı sıra, en yaygın kullanıldığı alan tıp alanında bulunmaktadır.
+
+Tipik olarak, histogram eşitlemenin röntgen taramaları ve BT taramalarında, radyografların kontrastını artırmak için uygulandığı görülür. Bu, doktorların ve radyologların taramaları daha iyi yorumlamasına ve doğru bir teşhis koymasına yardımcı olur.
+
+Bu eğitim sonunda, OpenCV kullanarak hem temel histogram eşitleme hem de adaptif histogram eşitlemeyi başarıyla görüntülere uygulayabileceksiniz.

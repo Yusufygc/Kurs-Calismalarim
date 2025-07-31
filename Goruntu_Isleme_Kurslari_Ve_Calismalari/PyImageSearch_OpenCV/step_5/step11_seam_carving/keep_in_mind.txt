@@ -1,0 +1,11 @@
+seam carving amacının, görüntünün kendisini yeniden boyutlandırırken
+görüntünün en göze çarpan (yani "ilginç") bölgelerini korumak olduğunu unutmayın.
+
+Yeniden boyutlandırma için geleneksel yöntemlerin kullanılması görüntünün 
+tamamının boyutlarını değiştirir; görüntünün hangi bölümünün en çok veya 
+en az önemli olduğunun belirlenmesine özen gösterilmez.
+
+Dikiş oyma bunun yerine, (1) görüntünün tüm "ilginç" bölgelerinin korunmasını ve
+(2) bunun estetik olarak yapılmasını sağlamak için görüntünün hangi bölgelerinin
+kaldırılabileceğini/çoğaltılabileceğini belirlemek üzere enerji haritasından
+türetilen buluşsal yöntem/yol bulmayı uygular.

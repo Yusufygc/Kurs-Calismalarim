@@ -1,0 +1,42 @@
+Our motion detector algorithm will detect motion by form of background subtraction.
+
+Most background subtraction algorithms work by:
+
+1- Accumulating the weighted average of the previous N frames
+
+2- Taking the current frame and subtracting it from the weighted average of frames
+
+3- Thresholding the output of the subtraction to highlight the regions with substantial differences in pixel values (“white” for foreground and “black” for background)
+
+4- Applying basic image processing techniques such as erosions and dilations to remove noise
+
+5- Utilizing contour detection to extract the regions containing motion
+
+
+1- Önceki N karenin ağırlıklı ortalamasını biriktirme
+
+2- Mevcut kareyi alın ve onu önceki karelerin ağırlıklı ortalamasından çıkarın
+
+3- Çıkarma işleminin çıktısına eşik uygulama, piksel değerlerinde belirgin farklılıkları vurgulamak için ("beyaz" ön plan ve "siyah" arka plan olarak)
+
+4- Gürültüyü gidermek için erozyon ve genişlemeler gibi temel görüntü işleme tekniklerini uygulama
+
+5- Hareketi içeren bölgeleri çıkarmak için kontur tespitini kullanma
+
+
+1- Önceki N karenin ağırlıklı ortalamasını biriktirme:
+Bu adım, belirtilen önceki N karesinin piksel değerlerinin ağırlıklı ortalamasını hesaplamayı içerir. Bu, sahnenin statik arka planını temsil eden bir referans arka plan karesi elde etmenizi sağlar.
+
+2- Mevcut kareyi alın ve onu önceki karelerin ağırlıklı ortalamasından çıkarın:
+Ağırlıklı ortalama arka plan karesini elde ettikten sonra, mevcut karenin piksel değerlerini karşılaşan piksel değerlerinden çıkarırsınız. Bu çıkarma, mevcut kare ile arka plan karesi arasındaki farkları vurgular, hareketin gerçekleştiği bölgeleri öne çıkarır.
+
+3- Çıkarma işleminin çıktısına eşik uygulama:
+Önceki adımdan elde edilen çıkış, pozitif ve negatif değerleri içerir. Bir eşik uygulayarak, belirgin farklılıkların (ön plan) ve minimal farklılıkların (arka plan) bölgelerini ayıran ikili bir maske oluşturabilirsiniz. Eşik değerini aşan pikseller "beyaz" olarak ayarlanır, potansiyel hareketi gösterirken, eşik altındaki pikseller "siyah" olarak ayarlanır.
+
+4- Temel görüntü işleme tekniklerini uygulama (erozyon ve genişleme):
+Erozyon ve genişleme, gürültüyü gidermeye ve tespit edilen bölgeleri iyileştirmeye yardımcı olan morfolojik işlemlerdir. Erozyon, ön plan bölgelerini küçültür, potansiyel olarak küçük gürültülü alanları kaldırırken, genişleme ön plan bölgelerini genişletir, boşlukları doldurur ve yakındaki hareketli alanları birleştirir.
+
+5- Hareketi içeren bölgeleri çıkarmak için kontur tespitini kullanma:
+Erozyon ve genişleme işlemlerini uyguladıktan sonra, kontur tespiti algoritmalarını (örneğin, OpenCV'nin findContours fonksiyonu) kullanarak ikili maske içindeki bağlantılı bileşenleri tanımlayabilir ve çıkarabilirsiniz. Her kontur, bir hareket bölgesine karşılık gelir. Bu konturlar daha sonra daha fazla analiz edilmek üzere kullanılabilir veya hareketli nesnelerin etrafına sınırlayıcı kutular çizmek için kullanılabilir.
+
+Genel olarak, bu yaklaşım hareketi tespit etmek için temel bir arka plan çıkarma yöntemidir. Bu tür bir yöntem, gözetim sistemleri ve nesne takip gibi uygulamalarda yaygın olarak kullanılır. Ancak karmaşık arka planlar, değişen aydınlatma koşulları ve diğer faktörlerin bulunduğu daha zorlu senaryolarda daha gelişmiş teknikler, optik akış veya derin öğrenme temelli yöntemler gibi, sağlam bir hareket tespiti için gerekebilir.

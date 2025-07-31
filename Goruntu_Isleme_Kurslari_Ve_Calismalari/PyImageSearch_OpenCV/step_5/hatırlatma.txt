@@ -1,0 +1,7 @@
+https://pyimagesearch.com/2015/05/04/target-acquired-finding-targets-in-drone-and-quadcopter-video-streams-using-python-and-opencv/
+
+bu dronla hedef algılama 
+
+https://pyimagesearch.com/2016/01/25/real-time-panorama-and-image-stitching-with-opencv/
+
+bu da real time panorama ve image stitching yapma ama ben bunları yapmadım

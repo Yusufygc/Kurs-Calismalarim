@@ -1,0 +1,34 @@
+Saliency detection is applied to many aspects of computer vision
+and image processing, but some of the more popular applications of saliency include:
+
+Object detection — Instead of exhaustively applying a sliding window 
+and image pyramid, only apply our (computationally expensive) detection algorithm 
+to the most salient, interesting regions of an image most likely to contain an object
+
+Advertising and marketing — Design logos and ads that “pop” and “stand out” to us from a quick glance
+
+Robotics — Design robots with visual systems that are similar to our own
+
+#########################################################
+##### Three different saliency detection algorithms #####
+#########################################################
+
+In OpenCV’s saliency module there are three primary forms of saliency detection:
+
+# Static saliency: This class of saliency detection algorithms relies on image features and statistics to localize the most interesting regions of an image.
+
+# Motion saliency: Algorithms in this class typically rely on video or frame-by-frame inputs. 
+The motion saliency algorithms process the frames, keeping track of objects that “move”. 
+Objects that move are considered salient.
+
+# Objectness: Saliency detection algorithms that compute “objectness” generate a set of “proposals”, 
+or more simply bounding boxes of where it thinks an object may lie in an image.
+
+!!!! Keep in mind that computing saliency is not object detection 
+The underlying saliency detection algorithm has no idea if there is a particular object in an image or not.
+(Temel belirginlik tespit algoritmasının, bir görüntüde belirli bir nesnenin olup olmadığı hakkında hiçbir fikri yoktur.
+Bunun yerine, göze çarpanlık dedektörü basitçe bir nesnenin görüntüde nerede bulunabileceğini düşündüğünü rapor ediyor)
+
+# Process the region proposed by the saliency detector
+
+# Predict/classify the region and make any decisions on this prediction
