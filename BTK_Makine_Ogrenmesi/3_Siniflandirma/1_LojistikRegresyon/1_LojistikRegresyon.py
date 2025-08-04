@@ -35,11 +35,15 @@ print(y_predict)
 print(y_test)
 
 
+#---------------------------------------------------------------------#
+#---------------------------------------------------------------------#
 
+# KARMASIKLIK MATRISI
+from sklearn.metrics import confusion_matrix
 
+cfMatrix = confusion_matrix(y_test,y_predict)
 
-
-
+print(cfMatrix)
 
 
 
