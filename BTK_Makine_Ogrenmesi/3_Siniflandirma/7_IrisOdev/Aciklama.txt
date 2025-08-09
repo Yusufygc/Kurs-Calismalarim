@@ -1,0 +1,44 @@
+[[16  0  0]
+ [ 0 18  1]
+ [ 0  1 14]]
+
+💡 3 sınıf var:
+1 Iris-setos
+2 Iris-versicolor
+3 Iris-virginica
+
+📌 Matrisin mantığı
+Satırlar = Gerçek sınıf (y_test)
+
+Sütunlar = Modelin tahmin ettiği sınıf (y_pred)
+
+Köşegen (diagonal) = Doğru tahminler
+
+Köşegen dışı = Hatalı tahminler
+
+| Gerçek \ Tahmin | Setosa | Versicolor | Virginica | Toplam |
+| --------------- | ------ | ---------- | --------- | ------ |
+| **Setosa**      | 16     | 0          | 0         | 16     |
+| **Versicolor**  | 0      | 18         | 1         | 19     |
+| **Virginica**   | 0      | 1          | 14        | 15     |
+
+
+🧮 Açıklama:
+[0,0] = 16 → Gerçek sınıfı Setosa olan 16 örnek, Setosa olarak doğru tahmin edilmiş.
+
+[1,1] = 18 → Gerçek sınıfı Versicolor olan 18 örnek doğru tahmin edilmiş.
+
+[2,2] = 14 → Gerçek sınıfı Virginica olan 14 örnek doğru tahmin edilmiş.
+
+[1,2] = 1 → Gerçek sınıfı Versicolor olan 1 örnek, yanlışlıkla Virginica olarak tahmin edilmiş.
+
+[2,1] = 1 → Gerçek sınıfı Virginica olan 1 örnek, yanlışlıkla Versicolor olarak tahmin edilmiş.
+
+📊 Özetle:
+Modelin toplam doğruluğu:
+
+16+18+14   48
+--------=  -- =96%
+16+19+15   50
+
+Yani 50 test örneğinin 48’i doğru tahmin edilmiş, 2’si yanlış.
