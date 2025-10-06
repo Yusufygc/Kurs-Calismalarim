@@ -18,6 +18,9 @@ def getProducts():
     # sql = "SELECT * FROM products WHERE name LIKE '%iphone%'" # içinde iphone geçen
     # sql = "SELECT * FROM products WHERE name LIKE 'iphone%'" # iphone ile başlayan
     # sql = "SELECT * FROM products WHERE name LIKE '%pro'" # pro ile biten
+    sql = "SELECT * FROM products ORDER BY name" # sıralı isim
+    # sql = "SELECT * FROM products ORDER BY name DESC" # ters sıralı isim
+    sql = "SELECT * FROM products ORDER BY name, price" # önce isme göre sonra fiyata göre sıralar
 
     mycursor.execute(sql)
 
