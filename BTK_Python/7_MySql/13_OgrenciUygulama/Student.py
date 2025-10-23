@@ -12,3 +12,15 @@ class Student:
         self.birthdate = birthdate
         self.gender = gender
         self.classid = classid
+
+    @staticmethod
+    def CreateStudent(object):
+        list=[]
+        if isinstance(object,tuple):
+            student = Student(object[0], object[1], object[2], object[3], object[4], object[5], object[6])
+            list.append(student)
+        else:
+            for row in object:
+                student = Student(row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+                list.append(student)
+        return list
