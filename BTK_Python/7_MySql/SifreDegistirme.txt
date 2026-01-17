@@ -1,0 +1,3 @@
+-- MySQL Workbench'te bir SQL penceresi açıp bunları çalıştırın:
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Sifre';
+FLUSH PRIVILEGES;
