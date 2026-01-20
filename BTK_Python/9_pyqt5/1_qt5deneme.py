@@ -8,7 +8,7 @@ def Window():
     win = QMainWindow() #pencere olusturuldu
     win.setWindowTitle("PyQt5 Window") #pencere basligi
     win.setGeometry(200, 200,450,450) #pencere boyutlari
-    win.setWindowIcon(QIcon("9_pyqt5\\software.png")) #pencere ikonu
+    win.setWindowIcon(QIcon("9_pyqt5\\img\\software.png")) #pencere ikonu
     win.setToolTip("Bu bir PyQt5 penceresidir") #pencere uzerine gelince aciklama
     win.move(60, 15) #pencere konumu
     win.show() #pencere gosterildi
