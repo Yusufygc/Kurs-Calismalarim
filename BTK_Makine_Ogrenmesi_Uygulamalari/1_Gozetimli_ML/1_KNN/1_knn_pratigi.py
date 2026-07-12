@@ -4,6 +4,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
 
 cancer = load_breast_cancer()
 df =pd.DataFrame(data=cancer.data, columns=cancer.feature_names)
@@ -31,5 +32,22 @@ accuracy=accuracy_score(y_test, y_pred)
 cf_matris = confusion_matrix(y_test, y_pred)
 print(cf_matris)
 
-# parametre ayarı
+# Hiperparametre ayarlaması
 
+accuracy_values=[]
+k_values = []
+for k in range(1,21):
+    knn =KNeighborsClassifier(n_neighbors=k)
+    knn.fit(X_train,y_train)
+    y_pred = knn.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    accuracy_values.append(accuracy)
+    k_values.append(k)
+    
+plt.figure()
+plt.plot(k_values,accuracy_values,marker="o",linestyle="-")
+plt.title("K degerine dogruluk")
+plt.xlabel("K degeri")
+plt.ylabel("Dogruluk")
+plt.xticks(k_values) # x değerlerini direkt k valuden alır floatlı gözükmez
+plt.grid(True)
